@@ -1636,7 +1636,7 @@ footer .sp{margin-left:auto}
             </div>
 
             <div class="track">
-              <div class="track-top"><span>My hours</span><span class="mono" id="my-hours">09:00 to 19:00 UTC+7</span></div>
+              <div class="track-top"><span>My hours, Mon to Sat</span><span class="mono" id="my-hours">07:00 to 19:00 UTC+7</span></div>
               <div class="bar-24" id="bar-me">
                 <div class="seg" id="seg-me"></div>
                 <div class="now" id="now-me" hidden></div>
@@ -1652,7 +1652,7 @@ footer .sp{margin-left:auto}
               <div class="ticks"><span>00</span><span>06</span><span>12</span><span>18</span><span>24</span></div>
             </div>
 
-            <p style="font-size:.88rem;color:var(--muted);margin:0" id="avail-note">Both bars are drawn on my local time, UTC+7.</p>
+            <p style="font-size:.88rem;color:var(--muted);margin:0" id="avail-note">I work Monday to Saturday, 07:00 to 19:00 local time. Both bars are drawn on that clock.</p>
           </div>
         </div>
       </div>
@@ -1751,7 +1751,7 @@ footer .sp{margin-left:auto}
 
   /* ---------------- availability ---------------- */
   var LOCAL = "Asia/Jakarta", EU = "Europe/Berlin";   // IANA id, resolves to UTC+7
-  var MY_START = 9, MY_END = 19;      // my core hours, local time
+  var MY_START = 7, MY_END = 19;      // my core hours, local time (Mon to Sat)
   var EU_START = 9, EU_END = 17;      // European business hours, local
 
   function tzOffsetHours(tz, date) {
@@ -1819,7 +1819,7 @@ footer .sp{margin-left:auto}
     }
     var note = document.getElementById("avail-note");
     if (note && ovB > ovA) {
-      note.textContent = "Both bars are drawn on my local time, UTC+7. European business hours land in my afternoon, so a Central-European morning is always live for me.";
+      note.textContent = "I work Monday to Saturday, 07:00 to 19:00 local time. Both bars are drawn on that clock, so a Central-European morning always falls inside my afternoon.";
     }
   }
   tickClock();
